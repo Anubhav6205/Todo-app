@@ -1,0 +1,30 @@
+.header {
+  text-align: center;
+  margin: 5rem 0;
+  font-size: 4rem;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+.form .submit {
+  padding: 0.3rem 0.3rem;
+  border-radius: 0.1rem;
+}
+.form .input {
+  margin: 0 2rem 0 0;
+  width: 40%;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-bottom: 1px solid #c5c5c5;
+}
+
+.list {
+  margin: 5rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

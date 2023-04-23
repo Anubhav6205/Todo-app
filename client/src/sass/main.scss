@@ -1,0 +1,301 @@
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap");
+body {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(101, 91, 94, 1) 0%, rgba(6, 74, 92, 1) 95%);
+}
+
+.header {
+    text-align: center;
+    margin: 8rem 0 0 0;
+    font-size: 5rem;
+    color: #f7e2df;
+    font-family: "Work Sans", sans-serif;
+    letter-spacing: 1rem;
+}
+.middle {
+    width: 98vw;
+    margin: 5rem 0 3rem 0;
+    display: flex;
+    justify-content: center;
+
+    .form {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        width: 30%;
+        background-color: white;
+        border-radius: 0.6rem;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        .left {
+            padding: 0.7rem 1rem;
+            background-color: #181a1a;
+            border-radius: 0.6rem;
+
+            .input {
+                width: 70%;
+                outline: none;
+                border: none;
+                background-color: #181a1a;
+                color: rgb(228, 228, 228);
+                font-family: "Work Sans", sans-serif;
+                font-weight: 500;
+                letter-spacing: 0.05rem;
+
+                &::placeholder {
+                    color: rgb(108, 108, 108);
+                }
+            }
+        }
+        .right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            .submit {
+                font-size: 24px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+
+            .clearall {
+                font-size: 24px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+
+            .search {
+                font-size: 24px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.icon-rotate {
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.icon-dustbin {
+    animation: dustbin 0.8s ease-in-out;
+}
+
+@keyframes dustbin {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(5px);
+        transform: translateX(2px);
+    }
+    75% {
+        transform: translateY(-4px);
+        transform: translateX(-2px);
+    }
+    100% {
+        transform: translateY(0);
+        transform: translateX(0);
+    }
+}
+
+.icon-search {
+    animation: search 0.8s ease-in-out;
+}
+
+@keyframes search {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.list {
+    font-family: "Nunito Sans", sans-serif;
+    margin: 5rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .todos {
+        width: 50%;
+        display: grid;
+        grid-template-columns: 5fr 1fr;
+        margin: 2rem 0 0 0;
+        padding: 0.8rem 1rem;
+        border-radius: 0.8rem;
+        background-color: #242f33;
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+            rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+        .left {
+            
+            overflow-wrap: break-word;
+            margin-right: 1rem;
+            .span {
+             
+                overflow: hidden;
+                text-overflow: ellipsis;
+               
+            }
+            
+        }
+
+        .right {
+            
+            display: flex;
+            flex-direction: row;
+         
+            i {
+                height: 2rem;
+                width: 2rem;
+                color: #242f33;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100%;
+                font-size: 1.2rem;
+                background-color: #959fa4;
+                margin: 0 0.5rem 0 0;
+                transition: 0.2s ease-in-out;
+
+                &:hover {
+                    background-color: #c2c27f;
+                }
+            }
+        }
+    }
+}
+.span {
+    position: relative;
+    display: inline-block;
+    color: rgb(144, 165, 123);
+   
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 0%;
+        background-color: rgb(131, 130, 130);
+        height: 2px;
+        bottom: 40%;
+        transition: 0.5s ease-in;
+    }
+
+    &.completed:before {
+        width: 100%;
+    }
+}
+
+
+
+$tablet: 768px;
+$mobile: 578px;
+@media (max-width: 1250px) {
+    .middle {
+        .form {
+            width: 40%;
+            grid-template-columns: 3fr 1fr;
+        }
+    }
+}
+
+@media (max-width: 930px) {
+    .middle {
+        .form {
+            width: 50%;
+            grid-template-columns: 3fr 1fr;
+        }
+    }
+}
+@media (max-width: $tablet) {
+    .header {
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+    }
+
+    .middle {
+        .form {
+            width: 50%;
+            grid-template-columns: 2fr 1fr;
+        }
+    }
+
+    .list {
+        .todos {
+            display: grid;
+            grid-template-columns: 4fr 1fr;
+            .right {
+                display: none;
+            }
+            
+        }
+    }
+}
+
+
+@media (max-width: $mobile)
+{
+    .header {
+        font-size: 1.3rem;
+        letter-spacing: 0.5rem;
+    }
+
+    .middle {
+        .form {
+            width: 70%;
+            grid-template-columns: 2fr 1fr;
+        }
+    }
+
+    .list {
+       
+    
+        .todos {
+            
+           
+            .left {
+                width: 70%;
+            overflow-wrap: break-word;
+            margin-right: 1rem;
+            
+                .span {
+                    display: block;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                   
+                   
+                }
+                
+            }
+    
+            
+        }
+    }
+
+}
